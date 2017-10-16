@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2017 at 11:44 PM
+-- Generation Time: Oct 17, 2017 at 01:34 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -37,12 +37,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`) VALUES
-(1, 'admin', '1'),
-(2, 'admin', '1'),
-(3, 'admin', '1'),
-(4, 'murad', 'c4ca4238a0b923820dcc509a6f75849b'),
-(5, 'sharif', 'c81e728d9d4c2f636f067f89cc14862c'),
-(6, 'murad', 'c4ca4238a0b923820dcc509a6f75849b');
+(1, 'admin', 'c4ca4238a0b923820dcc509a6f75849b');
 
 -- --------------------------------------------------------
 
@@ -70,11 +65,15 @@ INSERT INTO `designations` (`id`, `designation`) VALUES
 (8, 'Font-end developer'),
 (9, 'Admin'),
 (10, 'CEO'),
-(23, 'Junior Web Developer'),
-(24, 'System Analyst'),
-(25, 'sfsdfsdfs'),
-(26, 'qweqwr354'),
-(27, 'yutyut');
+(36, 'Managing Director'),
+(37, 'ksdjfjshdf'),
+(38, 'eretrtrterterhgfhg'),
+(39, 'rertrytrytrty'),
+(40, 'hhhh'),
+(41, 'oooooo'),
+(42, 'jata'),
+(43, 'add new'),
+(44, 'Class sdfsdf');
 
 -- --------------------------------------------------------
 
@@ -117,7 +116,29 @@ INSERT INTO `paygrades` (`id`, `name`, `designation_id`, `basic`, `status`) VALU
 (2, 'Grade Two', 1, '25000', 0),
 (3, 'Grade Three', 3, '20000', 0),
 (4, 'Grade Four', 4, '15000', 0),
-(5, 'Grade Five', 2, '10000', 1);
+(5, 'Grade Five', 2, '10000', 0),
+(6, 'Grade six', 7, '5000', 1),
+(7, 'Grade Seven', 8, '9000', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payitems`
+--
+
+CREATE TABLE `payitems` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payitems`
+--
+
+INSERT INTO `payitems` (`id`, `name`) VALUES
+(1, 'Home Rent'),
+(2, 'Health'),
+(3, 'Transports');
 
 --
 -- Indexes for dumped tables
@@ -148,6 +169,12 @@ ALTER TABLE `paygrades`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `payitems`
+--
+ALTER TABLE `payitems`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -155,12 +182,12 @@ ALTER TABLE `paygrades`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `designations`
 --
 ALTER TABLE `designations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `employees`
 --
@@ -170,7 +197,12 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `paygrades`
 --
 ALTER TABLE `paygrades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `payitems`
+--
+ALTER TABLE `payitems`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

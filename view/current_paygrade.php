@@ -10,7 +10,7 @@ $query = "SELECT * FROM paygrades WHERE status='0' ORDER BY id DESC";
 $paygrade= $db->select($query);
 
 
-
+$page="current_paygrade.php";
 ?>
   <div class="row">
     <div class="col-md-12">
@@ -40,7 +40,7 @@ $paygrade= $db->select($query);
                     </td>
                     <td>
                          <a href="?page=view/deactive_paygrade.php&&id=<?php echo $row['id'] ?>" >
-                           <span class="btn btn-danger">Deactive</span>
+                           <span class="btn btn-danger" id="myBtn">Deactive</span>
                          </a>
                     </td>
                   </tr>
@@ -96,3 +96,12 @@ $paygrade= $db->select($query);
       
     </div>
   </div>
+  <script type="text/javascript">
+    function red(){
+       var btn = document.getElementById('myBtn');
+      btn.addEventListener('click', function() {
+        document.location.href = '<?php echo $page ?>';
+      });
+    }
+   
+  </script>

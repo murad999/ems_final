@@ -29,8 +29,6 @@ $('#paygrade').on('submit',function(e){
       alert("Paygrade Name is required")
     }else if($('#salary_range').val() == ''){
       alert("Salary range is required")
-    }else if($('#desig').attr('required', 'required')){
-      alert("Designation is required")
     }else{
          $.ajax({
           url:"view/add_paygrade.php",
@@ -99,3 +97,23 @@ $('#payItem').on('submit',function(e){
     });
     }
   })
+
+
+//add employees
+//
+// $('#empInfo').on('submit',function(e){
+//     event.preventDefault();
+//     //console.log('success');
+//          $.ajax({
+//           url:"view/add_employee.php",
+//           method:"post",
+//           data:$('#empInfo').serialize(),
+//           success:function(data){
+//             console.log(data);
+//             $('#empInfo')[0].reset();
+//             $('#myModal').modal('hide');
+//             $('#empInfo_table').html(data);
+//           }
+
+//     });
+//   })

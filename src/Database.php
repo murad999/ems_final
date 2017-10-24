@@ -43,8 +43,10 @@ class Database
     public function update($query){
         $update = $this->link->query($query);
         if($update){ 
-             //header('location:index.php');
+             
             echo "<p class='alert alert-success text-center'>" . "Data Updated" . "</p>";
+            // if(!headers_sent())
+            // header('location:?page=view/designation.php');
         }else{
             echo "Post did not updated";
         }
@@ -57,10 +59,12 @@ class Database
             echo "Post did not deleted";
         }
     }
-    public function Deactive($query){
+    public function deactive($query){
+
         $deactive= $this->link->query($query);
         if($deactive){
-            header('location:../index.php?page=view/current_paygrade.php');
+           if(!headers_sent());
+            header('location:?page=view/current_paygrade.php');
         }else{
             echo "Post did not deleted";
         }
@@ -68,7 +72,9 @@ class Database
     public function active($query){
         $active= $this->link->query($query);
         if($active){
-            header('location:../index.php?page=view/deactive_paygrade.php');
+            //return true;
+            if(!headers_sent())
+            header('location:?page=view/deactive_pay_list.php');
         }else{
             echo "Post did not deleted";
         }

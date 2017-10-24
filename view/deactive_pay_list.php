@@ -5,7 +5,7 @@ include_once('src/Database.php');
  include_once('src/PayGrade.php');
 $db=new Database();
 
-$query = "SELECT * FROM paygrades WHERE status='1' ORDER BY id DESC";
+$query = "SELECT * FROM paygrades WHERE status='1' ORDER BY id ASC";
 
 $paygrade= $db->select($query);
 

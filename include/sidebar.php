@@ -31,7 +31,7 @@
                             <a href="?page=view/main.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i><?php echo case_title("employe_info");?><span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> <?php echo case_title("employe_info");?><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="?page=view/current_employ.php"><?php echo case_title("current_employes");?></a>
@@ -43,7 +43,7 @@
                             
                         </li>
 						 <li>
-                            <a href="#"><i class="fa fa-cog fa-fw"></i><?php echo case_title("designation_info");?><span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cog fa-fw"></i> <?php echo case_title("designation_info");?><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="?page=view/designation.php"><?php echo case_title("designation_details");?></a>
@@ -51,7 +51,7 @@
                             </ul>   
                         </li> 
                         <li>
-                            <a href="#"><i class="fa fa-pie-chart fa-fw"></i><?php echo case_title("paygrade_info");?><span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-pie-chart fa-fw"></i> <?php echo case_title("paygrade_info");?><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="?page=view/current_paygrade.php"><?php echo case_title("current_paygrades");?></a>

@@ -12,6 +12,8 @@ $query2="SELECT * FROM designations ORDER BY id ASC";
 
 $designation=$db->select($query2);
 
+$emp="SELECT * FROM employees ORDER BY id ASC";
+$employees=$db->select($emp);
 
 ?>
 
@@ -31,10 +33,45 @@ $designation=$db->select($query2);
         <i class="fa fa-plus fa-fw"></i><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalEmp">Add New Employee</button>
     </div>
 </div>
+<hr>
+<?php 
+// $query="SELECT employees.id,employees.fullname
+//   FROM employees
+//  INNER JOIN designations ON designations.id = employees.designation_id
+//  INNER JOIN paygrades ON paygrades.id = employees.paygrade_id
+//  ORDER BY employees.id";
+// echo $query;exit;
+// $alls=$db->select($query);
+
+?>
 <div class="row">
-    <div class="col-md-4">
-        
+<?php foreach($employees as $employ){
+    $user_info=json_decode($employ['emp_info'],true);
+
+ ?>
+    <div class="col-md-6">
+      <div id="empInfo_table">
+            <ul>
+                <li id="data">
+                    <div id="img">
+                       <img src="vendor/images/<?php echo $employ['image'] ?>" alt="" width="200px" height="200px"> 
+                    </div>
+                    <div id="info">
+                        <div class="title">Name:<?php echo $user_info['fullname']?> | join_date:<?php echo $employ['joing_date']?></div>
+                        <div class="list">
+                           <ul>
+                                <li><?php echo $employ['designation_id']?></li>
+                                <li><?php echo $employ['paygrade_id']?></li>
+                                <li><?php echo $employ['email']?></li>
+                                
+                            </ul> 
+                        </div>   
+                    </div>
+                </li>
+            </ul>
+        </div> 
     </div>
+<?php }?>
 </div>
 
 
